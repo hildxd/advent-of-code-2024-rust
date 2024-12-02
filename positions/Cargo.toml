@@ -1,9 +1,9 @@
 [package]
-name = "day1"
+name = "positions"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 anyhow = {workspace = true}
 tokio = {workspace = true}
-positions = {path = "../positions"}
+thiserror = {workspace = true}
