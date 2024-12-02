@@ -19,10 +19,10 @@ impl FromStr for Position {
         let mut v = s.split_whitespace();
         let left = v
             .next()
-            .ok_or_else(|| Day1Error::ParseTextError(format!("miss left data with {}", s)))?;
+            .ok_or_else(|| Day1Error::ParseIntError(format!("{}", s)))?;
         let right = v
             .next()
-            .ok_or_else(|| Day1Error::ParseTextError(format!("miss right data with {}", s)))?;
+            .ok_or_else(|| Day1Error::ParseIntError(format!("{}", s)))?;
         let result = Position(
             left.parse::<i64>()
                 .map_err(|_| Day1Error::ParseTextError(s.to_string()))?,
