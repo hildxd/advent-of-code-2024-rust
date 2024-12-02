@@ -16,18 +16,21 @@ struct Positions(Vec<Position>);
 impl FromStr for Position {
     type Err = Day1Error;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let v: Vec<&str> = s.split("   ").collect();
-        if v.len() != 2 {
-            return Err(Day1Error::ParseTextError(s.to_string()));
-        } else {
-            let result = Position(
-                v[0].parse()
-                    .map_err(|_| Day1Error::ParseTextError(s.to_string()))?,
-                v[1].parse()
-                    .map_err(|_| Day1Error::ParseTextError(s.to_string()))?,
-            );
-            return Ok(result);
-        }
+        let mut v = s.split_whitespace();
+        let left = v
+            .next()
+            .ok_or_else(|| Day1Error::ParseTextError(format!("miss left data with {}", s)))?;
+        let right = v
+            .next()
+            .ok_or_else(|| Day1Error::ParseTextError(format!("miss right data with {}", s)))?;
+        let result = Position(
+            left.parse::<i64>()
+                .map_err(|_| Day1Error::ParseTextError(s.to_string()))?,
+            right
+                .parse::<i64>()
+                .map_err(|_| Day1Error::ParseTextError(s.to_string()))?,
+        );
+        Ok(result)
     }
 }
 
