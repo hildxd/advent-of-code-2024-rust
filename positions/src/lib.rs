@@ -31,10 +31,10 @@ impl FromStr for Position {
         let mut v = s.split_whitespace();
         let left = v
             .next()
-            .ok_or_else(|| PositionsError::ParseIntError(format!("{}", s)))?;
+            .ok_or_else(|| PositionsError::ParseIntError(s.to_string()))?;
         let right = v
             .next()
-            .ok_or_else(|| PositionsError::ParseIntError(format!("{}", s)))?;
+            .ok_or_else(|| PositionsError::ParseIntError(s.to_string()))?;
         let result = Position(
             left.parse::<i64>()
                 .map_err(|_| PositionsError::ParseTextError(s.to_string()))?,
