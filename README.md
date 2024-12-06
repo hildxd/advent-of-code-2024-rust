@@ -6,3 +6,4 @@
 - [x] Day 2: Red-Nosed Reports
 - [x] Day 3: Mull It Over
 - [x] Day 4: Ceres Searc
+- [x] Day 5: Print Queue
