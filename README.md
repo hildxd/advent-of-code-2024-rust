@@ -9,3 +9,6 @@
 - [x] Day 5: Print Queue
 - [x] Day 6: Guard Gallivant
     - [ ] Part 2 未完成
+- [x] Day 7: Bridge Repair
+    - [ ] Part 2 未完成
+- [ ] Day 8: Resonant Collinearity
