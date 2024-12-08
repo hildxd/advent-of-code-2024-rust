@@ -7,3 +7,5 @@
 - [x] Day 3: Mull It Over
 - [x] Day 4: Ceres Searc
 - [x] Day 5: Print Queue
+- [x] Day 6: Guard Gallivant
+    - [ ] Part 2 未完成
